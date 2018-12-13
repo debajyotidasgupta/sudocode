@@ -90,12 +90,17 @@ def get_code(filename):
 		elif("function" in line_elem):		#check for functions part
 			funcs.append(line_elem[1])	#adding func name to funcs stack
 <<<<<<< HEAD
+<<<<<<< HEAD
 			return_list = line_elem		#storing the line_elem list vals in return_list to get return type
 			#temp = []
 =======
 			return_list.append(line_elem)		#storing the line_elem list vals in return_list to get return type
 			temp = []
 >>>>>>> upstream/master
+=======
+			return_list.append(line_elem)		#storing the line_elem list vals in return_list to get return type
+			#temp = []
+>>>>>>> sub
 			#print(line_elem)
 			line_of_code += line_elem[3] + " " + line_elem[1] + "("	#func defn
 			index_arg = line_elem.index("args")	#check where args is indexed
@@ -143,12 +148,15 @@ def get_code(filename):
 		elif("call" in line_elem):	#to call functions in main
 			num_values = 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 			if(line_elem[1] in funcs):	#checking if func name is funcs stack
 				line_of_code += line_elem[1] + "("
 				#index_num_args = funcs.index(line_elem[1]) + 1
 				index_values = line_elem.index("values")
 				
 =======
+=======
+>>>>>>> sub
 			index_values = 0
 			#print(return_list)
 			for func in return_list:
@@ -156,7 +164,7 @@ def get_code(filename):
 				#if(line_elem[1] in funcs):	checking if func name is funcs stack
 				if('void' in func):
 					line_of_code += line_elem[1] + "("
-					index_num_args = funcs.index(line_elem[1]) + 1
+					#index_num_args = funcs.index(line_elem[1]) + 1
 					index_values = line_elem.index("values")
 
 				else:
@@ -164,7 +172,10 @@ def get_code(filename):
 					index_num_args = funcs.index(line_elem[1]) + 1
 					index_values = line_elem.index("values")
 
+<<<<<<< HEAD
 >>>>>>> upstream/master
+=======
+>>>>>>> sub
 				for i in range(index_values+1,len(line_elem)):
 					num_values += 1
 					if(i == len(line_elem)-1):
@@ -196,7 +207,11 @@ def get_code(filename):
 	code_file_ptr.write("}")	#ending the code with a last }
 	code_file_ptr.close()	#closing code file ptr.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	file_ptr.close()	#closing file ptr
 =======
 	file_ptr.close()	#closing file ptr
 >>>>>>> upstream/master
+=======
+	file_ptr.close()	#closing file ptr
+>>>>>>> sub
